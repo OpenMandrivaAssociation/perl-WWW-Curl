@@ -15,7 +15,6 @@ BuildRequires:	perl-devel
 BuildRequires:	libcurl-devel
 Obsoletes:	perl-Curl-easy
 Provides:	perl-Curl-easy
-Buildroot:	%{_tmppath}/%{name}-root
 
 %description
 WWW::Curl is a Perl extension interface for libcurl.
