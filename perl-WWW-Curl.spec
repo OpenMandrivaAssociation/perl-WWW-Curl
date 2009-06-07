@@ -1,6 +1,6 @@
 %define module		WWW-Curl
 %define name		perl-%{module}
-%define version		4.06
+%define version		4.07
 %define release		%mkrel 1
 
 Summary:	Perl extension interface for libcurl
