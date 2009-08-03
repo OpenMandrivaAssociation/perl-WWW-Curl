@@ -1,25 +1,25 @@
-%define module		WWW-Curl
-%define name		perl-%{module}
-%define version		4.09
-%define release		%mkrel 1
+%define upstream_name	 WWW-Curl
+%define upstream_version 4.09
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Perl extension interface for libcurl
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}/
-Source:     http://www.cpan.org/modules/by-module/WWW/%{module}-%{version}.tar.gz
-BuildRequires:	perl-devel
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:    http://www.cpan.org/modules/by-module/WWW/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	libcurl-devel
-Buildroot:	%{_tmppath}/%{name}-%{version}
+BuildRequires:	perl-devel
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 WWW::Curl is a Perl extension interface for libcurl.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -43,4 +43,3 @@ rm -rf %{buildroot}
 %{perl_vendorarch}/WWW
 %{perl_vendorarch}/auto/WWW
 %{_mandir}/*/*
-
