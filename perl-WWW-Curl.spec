@@ -1,9 +1,9 @@
 %define upstream_name	 WWW-Curl
-%define upstream_version 4.12
+%define upstream_version 4.13
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 4
+Release:    %mkrel 1
 
 Summary:	Perl extension interface for libcurl
 License:	Artistic/GPL
