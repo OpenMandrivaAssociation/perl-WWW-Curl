@@ -1,5 +1,5 @@
 %define upstream_name	 WWW-Curl
-%define upstream_version 4.14
+%define upstream_version 4.15
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
