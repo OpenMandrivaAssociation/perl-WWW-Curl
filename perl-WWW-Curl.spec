@@ -1,15 +1,15 @@
-%define upstream_name	 WWW-Curl
-%define upstream_version 4.15
+%define	modname	WWW-Curl
+%define	modver	4.15
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    5
+Name:		perl-%{modname}
+Version:	%{perl_convert_version %{modver}}
+Release:	6
 
 Summary:	Perl extension interface for libcurl
 License:	Artistic/GPL
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}/
-Source0:    http://www.cpan.org/modules/by-module/WWW/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		http://search.cpan.org/dist/%{modname}/
+Source0:	http://www.cpan.org/modules/by-module/WWW/%{modname}-%{modver}.tar.gz
 
 BuildRequires:	libcurl-devel
 BuildRequires:	perl-devel
@@ -19,11 +19,11 @@ BuildRequires:	perl-devel
 WWW::Curl is a Perl extension interface for libcurl.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{modname}-%{modver}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-%{__make}
+perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
 # yes, some tests are interactive. that's Evil.
@@ -31,21 +31,18 @@ WWW::Curl is a Perl extension interface for libcurl.
 #%{__make} test < /dev/null
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc README Changes
 %{perl_vendorarch}/WWW
 %{perl_vendorarch}/auto/WWW
 %{_mandir}/*/*
 
-
 %changelog
+* Fri Dec 21 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 4.150.0-6
+- cleanups
+
 * Sun Jan 22 2012 Oden Eriksson <oeriksson@mandriva.com> 4.150.0-4mdv2012.0
 + Revision: 765805
 - rebuilt for perl-5.14.2
