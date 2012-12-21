@@ -11,7 +11,7 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}/
 Source0:	http://www.cpan.org/modules/by-module/WWW/%{modname}-%{modver}.tar.gz
 
-BuildRequires:	libcurl-devel
+BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	perl-devel
 
 
@@ -41,6 +41,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 %changelog
 * Fri Dec 21 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 4.150.0-6
+- use pkgconfig() deps for buildrequires
 - cleanups
 
 * Sun Jan 22 2012 Oden Eriksson <oeriksson@mandriva.com> 4.150.0-4mdv2012.0
