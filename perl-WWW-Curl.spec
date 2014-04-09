@@ -1,10 +1,11 @@
 %define	modname	WWW-Curl
-%define	modver	4.15
+%define modver 4.17
 
 Summary:	Perl extension interface for libcurl
+
 Name:		perl-%{modname}
-Version:	%{perl_convert_version %{modver}}
-Release:	11
+Version:	%perl_convert_version %{modver}
+Release:	1
 License:	Artistic/GPLv2
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}/
@@ -35,4 +36,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 %{perl_vendorarch}/WWW
 %{perl_vendorarch}/auto/WWW
 %{_mandir}/man3/*
+
 
