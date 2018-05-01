@@ -12,7 +12,7 @@ Url:		http://search.cpan.org/dist/%{modname}/
 Source0:	http://www.cpan.org/modules/by-module/WWW/%{modname}-%{modver}.tar.gz
 BuildRequires:	perl-devel
 BuildRequires:	pkgconfig(libcurl)
-BuildRequires:  perl(ExtUtils)
+BuildRequires:  perl(ExtUtils-Install)
 
 %description
 WWW::Curl is a Perl extension interface for libcurl.
