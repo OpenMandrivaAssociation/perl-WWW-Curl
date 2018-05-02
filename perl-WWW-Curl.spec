@@ -10,6 +10,7 @@ License:	Artistic/GPLv2
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}/
 Source0:	http://www.cpan.org/modules/by-module/WWW/%{modname}-%{modver}.tar.gz
+Patch1:		WWW-Curl-4.17-RT117793-1.patch
 BuildRequires:	perl-devel
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:  perl(Module::Install)
@@ -19,6 +20,7 @@ WWW::Curl is a Perl extension interface for libcurl.
 
 %prep
 %setup -qn %{modname}-%{modver}
+%apply_patches
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
