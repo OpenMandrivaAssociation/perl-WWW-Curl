@@ -5,10 +5,10 @@ Summary:	Perl extension interface for libcurl
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	9
+Release:	10
 License:	Artistic/GPLv2
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{modname}/
+Url:		http://metacpan.org/pod/WWW::Curl
 Source0:	http://www.cpan.org/modules/by-module/WWW/%{modname}-%{modver}.tar.gz
 Patch1:		WWW-Curl-4.17-RT117793-1.patch
 BuildRequires:	perl-devel
