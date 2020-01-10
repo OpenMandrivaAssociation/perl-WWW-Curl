@@ -20,7 +20,7 @@ WWW::Curl is a Perl extension interface for libcurl.
 
 %prep
 %setup -qn %{modname}-%{modver}
-%apply_patches
+%autopatch -p1
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
