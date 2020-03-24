@@ -1,0 +1,13 @@
+diff --git a/Makefile.PL b/Makefile.PL
+index 183a198..ed17eb7 100644
+--- a/Makefile.PL
++++ b/Makefile.PL
+@@ -151,7 +151,7 @@ if (!defined($curl_h)) {
+     close H;
+ 
+     for my $e (sort @syms) {
+-       if($e =~ /(OBSOLETE|^CURL_EXTERN|^CURL_STRICTER\z|^CURL_DID_MEMORY_FUNC_TYPEDEFS\z|_LAST\z|_LASTENTRY\z|^CURLINC_)/) {
++       if($e =~ /(OBSOLETE|^CURL_EXTERN|^CURL_STRICTER\z|^CURLOPT|^CURL_DID_MEMORY_FUNC_TYPEDEFS\z|_LAST\z|_LASTENTRY\z|^CURLINC_)/) {
+           next;
+        }
+        my ($group) = $e =~ m/^([^_]+_)/;
