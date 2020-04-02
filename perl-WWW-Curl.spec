@@ -4,10 +4,10 @@
 Summary:	Perl extension interface for libcurl
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	8
+Release:	9
 License:	Artistic/GPL
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}/
+Url:		https://metacpan.org/pod/WWW::Curl
 Source0:	http://www.cpan.org/modules/by-module/WWW/%{upstream_name}-%{upstream_version}.tar.gz
 Patch0:		perl-WWW-Curl-fix-CURL_STRICTER-undeclared.patch
 Patch1:		WWW-Curl-4.17-RT117793-1.patch
