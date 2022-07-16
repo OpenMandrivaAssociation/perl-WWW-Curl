@@ -1,10 +1,15 @@
 %define upstream_name WWW-Curl
 %define upstream_version 4.17
 
+%ifarch %{x86_64}
+# Workaround for debugsource generator bug
+%define _debugsource_template %{nil}
+%endif
+
 Summary:	Perl extension interface for libcurl
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	10
+Release:	11
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/WWW::Curl
