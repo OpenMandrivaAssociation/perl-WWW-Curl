@@ -14,14 +14,18 @@ License:	Artistic/GPL
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/WWW::Curl
 Source0:	http://www.cpan.org/modules/by-module/WWW/%{upstream_name}-%{upstream_version}.tar.gz
-Patch0:		perl-WWW-Curl-fix-CURL_STRICTER-undeclared.patch
-Patch1:		WWW-Curl-4.17-RT117793-1.patch
+Patch0:		https://src.fedoraproject.org/rpms/perl-WWW-Curl/raw/rawhide/f/WWW-Curl-4.17-Skip-preprocessor-symbol-only-CURL_STRICTER.patch
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=941915
-Patch2:         WWW-Curl-4.17-define-CURL-as-void.patch
-Patch3:		WWW-Curl-4.150.0-curl-7.50.2.patch
-Patch4:		WWW-Curl-4.17-RT130591.patch
-Patch5:		WWW-Curl-4.17-RT120736.patch
-Patch6:		fixed-curlopt-udnef.patch
+Patch1:		https://src.fedoraproject.org/rpms/perl-WWW-Curl/raw/rawhide/f/WWW-Curl-4.17-define-CURL-as-void.patch
+# Adapt to changes in cURL 7.69.0, bug #1812910, CPAN RT#132197
+Patch2:		https://src.fedoraproject.org/rpms/perl-WWW-Curl/raw/rawhide/f/WWW-Curl-4.17-Adapt-to-changes-in-cURL-7.69.0.patch
+# Adapt to changes in cURL 7.87.0, bug #2160057, CPAN RT#145992
+Patch3:		https://src.fedoraproject.org/rpms/perl-WWW-Curl/raw/rawhide/f/WWW-Curl-4.17-Adapt-to-curl-7.87.0.patch
+# Workound a bug in cURL 7.87.0, bug #2160057, CPAN RT#145992
+Patch4:		https://src.fedoraproject.org/rpms/perl-WWW-Curl/raw/rawhide/f/WWW-Curl-4.17-Work-around-a-macro-bug-in-curl-7.87.0.patch
+# OM patches
+# Adapt to changes in cURL 8.2.1
+Patch100:	WWW-Curl-curl-8.2.1.patch
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	perl-devel
 BuildRequires:	perl-Module-Install
@@ -30,8 +34,7 @@ BuildRequires:	perl-Module-Install
 WWW::Curl is a Perl extension interface for libcurl.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
-%autopatch -p1
+%autosetup -p1 -n %{upstream_name}-%{upstream_version}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
