@@ -1,10 +1,7 @@
 %define upstream_name WWW-Curl
 %define upstream_version 4.17
 
-%ifarch %{x86_64}
-# Workaround for debugsource generator bug
-%define _debugsource_template %{nil}
-%endif
+%undefine _debugsource_packages
 
 Summary:	Perl extension interface for libcurl
 Name:		perl-%{upstream_name}
