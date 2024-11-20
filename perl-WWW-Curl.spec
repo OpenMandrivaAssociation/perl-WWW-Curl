@@ -1,16 +1,15 @@
 %define upstream_name WWW-Curl
-%define upstream_version 4.17
 
 %undefine _debugsource_packages
 
 Summary:	Perl extension interface for libcurl
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	12
+Version:	4.17
+Release:	1
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/WWW::Curl
-Source0:	http://www.cpan.org/modules/by-module/WWW/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/WWW/%{upstream_name}-%{version}.tar.gz
 Patch0:		https://src.fedoraproject.org/rpms/perl-WWW-Curl/raw/rawhide/f/WWW-Curl-4.17-Skip-preprocessor-symbol-only-CURL_STRICTER.patch
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=941915
 Patch1:		https://src.fedoraproject.org/rpms/perl-WWW-Curl/raw/rawhide/f/WWW-Curl-4.17-define-CURL-as-void.patch
@@ -31,7 +30,7 @@ BuildRequires:	perl-Module-Install
 WWW::Curl is a Perl extension interface for libcurl.
 
 %prep
-%autosetup -p1 -n %{upstream_name}-%{upstream_version}
+%autosetup -p1 -n %{upstream_name}-%{version}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
