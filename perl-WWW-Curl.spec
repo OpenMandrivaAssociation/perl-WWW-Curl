@@ -5,7 +5,7 @@
 Summary:	Perl extension interface for libcurl
 Name:		perl-%{upstream_name}
 Version:	4.17
-Release:	1
+Release:	2
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/WWW::Curl
