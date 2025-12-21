@@ -22,6 +22,7 @@ Patch4:		https://src.fedoraproject.org/rpms/perl-WWW-Curl/raw/rawhide/f/WWW-Curl
 # OM patches
 # Adapt to changes in cURL 8.2.1
 Patch100:	WWW-Curl-curl-8.2.1.patch
+BuildRequires:	make
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	perl-devel
 BuildRequires:	perl-Module-Install
